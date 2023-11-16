@@ -1,14 +1,42 @@
 import turtle # LIBRERÍA PARA UN VIDEOJUEGO.
 
-puntero = turtle.Turtle() # EL PUNTERO ES INCLUIDO DESDE UNA LIBRERÍA.
+wn = turtle.Screen() # PANTALLA DEL JUEGO INCLUIDO DESDE UNA LIBRERÍA.
 
-puntero.speed(1) # VELOCIDAD EN QUE SE EJECUTA EL PUNTERO DEL JUEGO.
+wn.title("SNAKE GAME") # TÍTULO DEL JUEGO.
 
-# MEDIANTE UN CICLO "for" LOGRAREMOS EJECUTAR ESTAS LÍNEAS DE CÓDIGO.
+wn.setup(width=600, height=600) # TAMAÑO DE LA VENTANA DEL JUEGO (ANCHO * ALTURA).
 
-for i in range(0,4):
-    puntero.forward(100) # EL PUNTERO VA HACIA AL FRENTE CON UNA DISTANCIA PREDETERMINADA.
-    puntero.left(90) # EL PUNTERO VA HACIA LA IZQUIERDA CON UN ÁNGULO PREDETERMINADO.
+wn.bgcolor("yellow") # COLOR DE FONDO DEL JUEGO.
+
+# AJUSTES DE LA CABEZA PARA LA SERPIENTE.
+
+# OBJETO "Turtle".
+
+head = turtle.Turtle()
+
+# PARA QUE SE QUEDE FIJO:
+
+head.speed(0)
+
+# FIGURA DE LA SERPIENTE.
+
+head.shape('square')
+
+# COLOR DE LA CABEZA.
+
+head.color('green')
+
+# PARA NO DEJAR RASTROS DE LA ANIMACIÓN DE LA SERPIENTE.
+
+head.penup()
+
+# CENTRO DE LA CABEZA.
+
+head.goto(0, 0)
+
+# PARA HACER QUE EL PROGRAMA ESPERE A QUE YO LE DE A OTRA DIRECCIÓN.
+
+head.direction = "up"
 
 turtle.done() # EL PROGRAMA SE EJECUTA CORRECTAMENTE.
 
