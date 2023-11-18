@@ -39,10 +39,10 @@ head.goto(0, 0)
 
 # PARA HACER QUE EL PROGRAMA ESPERE A QUE YO LE DE A OTRA DIRECCIÓN.
 
-head.direction = "up"
+head.direction = "stop"
 
 def mov():
-    if head.direction == "up":
+    if head.direction == "Up":
 
         # ALMACENAR EL VALOR ACTUAL DE LA COORDENADA EN "Y".
 
@@ -61,6 +61,35 @@ def mov():
         # EL MOVIMIENTO DE LA CABEZA ES 10 VECES ABAJO.
 
         head.sety(y - 10)
+
+    if head.direction == "right":
+
+        # ALMACENAR EL VALOR ACTUAL DE LA COORDENADA EN "Y".
+
+        y = head.xcor()
+
+        # EL MOVIMIENTO DE LA CABEZA ES 10 VECES A LA DERECHA.
+
+        head.setx(y + 10)
+
+    if head.direction == "left":
+
+        # ALMACENAR EL VALOR ACTUAL DE LA COORDENADA EN "Y".
+
+        y = head.xcor()
+
+        # EL MOVIMIENTO DE LA CABEZA ES 10 VECES A LA IZQUIERDA.
+
+        head.setx(y - 10)
+
+def dirUp(): # SE VA HACIA ARRIBA.
+    head.direction = "Up"
+
+# CONECTAR CON EL TECLADO MEDIANTE TECLAS DE ARRIBA, ABAJO, IZQUIERDA O DERECHA.
+
+wn.listen() # DETECTA BOTONES DEL TECLADO MEDIANTE UNA VARIABLE.
+wn.onkeypress(dirUp, "Up") # SE PRESIONA LA TECLA DE MOVER HACIA ARRIBA.
+
 
 while True:
     wn.update()
