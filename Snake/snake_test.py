@@ -52,7 +52,7 @@ def mov():
 
         head.sety(y + 10)
 
-    if head.direction == "down":
+    if head.direction == "Down":
 
         # ALMACENAR EL VALOR ACTUAL DE LA COORDENADA EN "Y".
 
@@ -62,7 +62,7 @@ def mov():
 
         head.sety(y - 10)
 
-    if head.direction == "right":
+    if head.direction == "Right":
 
         # ALMACENAR EL VALOR ACTUAL DE LA COORDENADA EN "Y".
 
@@ -72,7 +72,7 @@ def mov():
 
         head.setx(y + 10)
 
-    if head.direction == "left":
+    if head.direction == "Left":
 
         # ALMACENAR EL VALOR ACTUAL DE LA COORDENADA EN "Y".
 
@@ -85,16 +85,28 @@ def mov():
 def dirUp(): # SE VA HACIA ARRIBA.
     head.direction = "Up"
 
+def dirDown(): # SE VA HACIA ABAJO.
+    head.direction = "Down"
+
+def dirRight(): # SE VA HACIA LA DERECHA.
+    head.direction = "Right"
+
+def dirLeft(): # SE VA HACIA LA IZQUIERDA.
+    head.direction = "Left"
+
 # CONECTAR CON EL TECLADO MEDIANTE TECLAS DE ARRIBA, ABAJO, IZQUIERDA O DERECHA.
 
 wn.listen() # DETECTA BOTONES DEL TECLADO MEDIANTE UNA VARIABLE.
 wn.onkeypress(dirUp, "Up") # SE PRESIONA LA TECLA DE MOVER HACIA ARRIBA.
+wn.onkeypress(dirDown, "Down") # SE PRESIONA LA TECLA DE MOVER HACIA ABAJO.
+wn.onkeypress(dirRight, "Right") # SE PRESIONA LA TECLA DE MOVER HACIA LA DERECHA.
+wn.onkeypress(dirLeft, "Left") # SE PRESIONA LA TECLA DE MOVER HACIA LA IZQUIERDA.
 
 
 while True:
-    wn.update()
-    mov()
-    time.sleep(delay)
+    wn.update() # ACTUALIZA EL PROGRAMA.
+    mov() # LLAMA AL MÉTODO DE MOVER SU CABEZA.
+    time.sleep(delay) # DUERME EL PROGRAMA DURANTE 0.1 FRAMES POR SEGUNDO.
 
 turtle.done() # EL PROGRAMA SE EJECUTA CORRECTAMENTE.
 
