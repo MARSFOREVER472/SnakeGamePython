@@ -41,6 +41,16 @@ head.goto(0, 0)
 
 head.direction = "stop"
 
+# CONFIGURACIÓN DE LA COMIDA:
+
+food = turtle.Turtle() # LA COMIDA SE APRECIARÁ EN LA VENTANA DEL JUEGO.
+food.speed(0) # VELOCIDAD DE LA COMIDA.
+food.shape("circle") # LA FORMA DE LA COMIDA LO DEJARÉ POR DEFECTO EN UN CÍRCULO.
+food.color("Red") # EL COLOR DE LA COMIDA SERÁ RELLENADO CON COLOR ROJO.
+food.penup() # DIBUJAREMOS LA COMIDA EN LA VENTANA DEL JUEGO.
+food.goto(0, 100) # LA COMIDA SERÁ POSICIONADA EN X = 0 E Y = 100.
+food.direction = "Stop" # INTERRUMPE LA EJECUCIÓN DE SU COMIDA.
+
 def mov():
     if head.direction == "Up":
 
