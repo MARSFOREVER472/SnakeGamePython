@@ -1,5 +1,6 @@
 import turtle # LIBRERÍA PARA UN VIDEOJUEGO.
 import time # LIBRERÍA PARA TEMPORIZADOR.
+import random # LIBRERÍA ALEATORIA.
 
 delay = 0.1
 
@@ -7,7 +8,7 @@ wn = turtle.Screen() # PANTALLA DEL JUEGO INCLUIDO DESDE UNA LIBRERÍA.
 
 wn.title("SNAKE GAME") # TÍTULO DEL JUEGO.
 
-wn.setup(width=600, height=600) # TAMAÑO DE LA VENTANA DEL JUEGO (ANCHO * ALTURA).
+wn.setup(width=600, height=500) # TAMAÑO DE LA VENTANA DEL JUEGO (ANCHO * ALTURA).
 
 wn.bgcolor("yellow") # COLOR DE FONDO DEL JUEGO.
 
@@ -115,6 +116,15 @@ wn.onkeypress(dirLeft, "Left") # SE PRESIONA LA TECLA DE MOVER HACIA LA IZQUIERD
 
 while True:
     wn.update() # ACTUALIZA EL PROGRAMA.
+
+    # ACIERTA A CUALQUIER POSICIÓN DE LAS COMIDAS SI LA PUNTUACIÓN QUE COLISIONA CON ELLAS MISMAS ES MENOR QUE 20 PUNTOS.
+
+    if head.distance(food) < 20:
+        x = random.randint(-280, 280) # COMIDA MEDIANTE POSICIÓN EN X.
+        y = random.randint(-280, 280) # COMIDA MEDIANTE POSICIÓN EN Y.
+        food.goto(x, y)
+
+
     mov() # LLAMA AL MÉTODO DE MOVER SU CABEZA.
     time.sleep(delay) # DUERME EL PROGRAMA DURANTE 0.1 FRAMES POR SEGUNDO.
 
