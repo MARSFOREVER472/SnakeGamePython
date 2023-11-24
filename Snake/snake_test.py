@@ -2,7 +2,8 @@ import turtle # LIBRERÍA PARA UN VIDEOJUEGO.
 import time # LIBRERÍA PARA TEMPORIZADOR.
 import random # LIBRERÍA ALEATORIA.
 
-delay = 0.1
+delay = 0.1 # SE ACELERA EL DELAY POR 1 SEGUNDO.
+body_segments = [] # ÉSTO DEVOLVERÁ UN ARREGLO PARA EL CUERPO DE LA SERPIENTE.
 
 wn = turtle.Screen() # PANTALLA DEL JUEGO INCLUIDO DESDE UNA LIBRERÍA.
 
@@ -123,6 +124,17 @@ while True:
         x = random.randint(-280, 280) # COMIDA MEDIANTE POSICIÓN EN X.
         y = random.randint(-280, 280) # COMIDA MEDIANTE POSICIÓN EN Y.
         food.goto(x, y)
+
+        # CONFIGURACIÓN PARA AGREGAR EL CUERPO DE LA SERPIENTE.
+
+        new_segment = turtle.Turtle() # AGREGAREMOS UN NUEVO SEGMENTO A LA VENTANA DEL JUEGO.
+        new_segment.speed(0) # LA VELOCIDAD DE ÉSTE SE INICIALIZA EN 0.
+        new_segment.shape('square') # EL SEGMENTO DE LA SERPIENTE SERÁ RECTA Y CUADRADA.
+        new_segment.color('Green') # EL COLOR DE ÉSTE SERÁ VERDE.
+        new_segment.penup() # DIBUJAREMOS EL SEGMENTO PARA LA SERPIENTE.
+        body_segments.append(new_segment) # EL CUERPO DE LA SERPIENTE CRECERÁ A PARTIR DE SU CABEZA.
+        print(body_segments)
+        
 
 
     mov() # LLAMA AL MÉTODO DE MOVER SU CABEZA.
