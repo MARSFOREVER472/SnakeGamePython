@@ -9,7 +9,7 @@ wn = turtle.Screen() # PANTALLA DEL JUEGO INCLUIDO DESDE UNA LIBRERÍA.
 
 wn.title("SNAKE GAME") # TÍTULO DEL JUEGO.
 
-wn.setup(width=600, height=500) # TAMAÑO DE LA VENTANA DEL JUEGO (ANCHO * ALTURA).
+wn.setup(width=1000, height=500) # TAMAÑO DE LA VENTANA DEL JUEGO (ANCHO * ALTURA).
 
 wn.bgcolor("yellow") # COLOR DE FONDO DEL JUEGO.
 
@@ -133,8 +133,21 @@ while True:
         new_segment.color('Green') # EL COLOR DE ÉSTE SERÁ VERDE.
         new_segment.penup() # DIBUJAREMOS EL SEGMENTO PARA LA SERPIENTE.
         body_segments.append(new_segment) # EL CUERPO DE LA SERPIENTE CRECERÁ A PARTIR DE SU CABEZA.
-        print(body_segments)
         
+    totalSegments = len(body_segments)
+    # print(totalSegments) ESTO ES SÓLO UN EJEMPLO SENCILLO DE CÓMO SE INCREMENTA LA PUNTUACIÓN AL CRECER SU CUERPO.
+
+    # EL CUERPO DE LA SERPIENTE AL CRECER LO VAMOS A RECORRER MEDIANTE UN CICLO "for".
+
+    for i in range(totalSegments - 1, 0, -1):
+        x = body_segments[i - 1].xcor()
+        y = body_segments[i - 1].ycor()
+        body_segments[i].goto(x, y)
+    
+    if totalSegments > 0:
+        x = head.xcor()
+        y = head.ycor()
+        body_segments[0].goto(x, y)
 
 
     mov() # LLAMA AL MÉTODO DE MOVER SU CABEZA.
