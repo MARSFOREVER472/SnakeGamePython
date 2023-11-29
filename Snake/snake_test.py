@@ -2,8 +2,10 @@ import turtle # LIBRERÍA PARA UN VIDEOJUEGO.
 import time # LIBRERÍA PARA TEMPORIZADOR.
 import random # LIBRERÍA ALEATORIA.
 
-delay = 0.1 # SE ACELERA EL DELAY POR 1 SEGUNDO.
+delay = 0.02 # SE ACELERA EL DELAY POR 0.02 MILISEGUNDOS.
 body_segments = [] # ÉSTO DEVOLVERÁ UN ARREGLO PARA EL CUERPO DE LA SERPIENTE.
+score = 0 # DEFINIMOS LA PUNTUACIÓN INICIAL DEL JUEGO.
+high_score = 0 # PUNTUACIÓN MÁXIMA DEL JUEGO SE INICIALIZA EN 0.
 
 wn = turtle.Screen() # PANTALLA DEL JUEGO INCLUIDO DESDE UNA LIBRERÍA.
 
@@ -52,6 +54,16 @@ food.color("Red") # EL COLOR DE LA COMIDA SERÁ RELLENADO CON COLOR ROJO.
 food.penup() # DIBUJAREMOS LA COMIDA EN LA VENTANA DEL JUEGO.
 food.goto(0, 100) # LA COMIDA SERÁ POSICIONADA EN X = 0 E Y = 100.
 food.direction = "Stop" # INTERRUMPE LA EJECUCIÓN DE SU COMIDA.
+
+# PARA LA PUNTUACIÓN:
+
+text = turtle.Turtle() # EL TEXTO APARECERÁ EN LA VENTANA DEL JUEGO.
+text.speed(0) # VELOCIDAD DE LA PUNTUACIÓN DE TEXTO SE INICIALIZA EN 0.
+text.color('Black') # EL COLOR DEL TEXTO SERÁ NEGRO.
+text.penup() # DIBUJAREMOS EL TEXTO EN LA VENTANA DEL JUEGO CON LA ITERACIÓN DEL "turtle.Turtle()".
+text.hideturtle() # OCULTAREMOS EL TEXTO DE LA PUNTUACIÓN MEDIANTE SU ITERACIÓN.
+text.goto(0, 260) # EL TEXTO QUEDA UBICADO EN ESA POSICIÓN.
+text.write(f'Puntuacion: 0        Puntuacion Maxima: 0', align="center", font=("Impact", 24))
 
 def mov():
     if head.direction == "Up":
