@@ -160,6 +160,15 @@ while True:
         new_segment.color('Green') # EL COLOR DE ÉSTE SERÁ VERDE.
         new_segment.penup() # DIBUJAREMOS EL SEGMENTO PARA LA SERPIENTE.
         body_segments.append(new_segment) # EL CUERPO DE LA SERPIENTE CRECERÁ A PARTIR DE SU CABEZA.
+
+        # HAREMOS QUE LA PUNTUACIÓN INCREMENTE AL COLISIONAR CON LA COMIDA.
+
+        score += 10 # INCREMENTA EN 10 LA PUNTUACIÓN INICIAL.
+        if score > high_score: # SI LA PUNTUACIÓN ES MAYOR QUE EL DE LA PUNTUACIÓN MÁXIMA.
+                high_score = score # LA PUNTUACIÓN ACTUAL ES SU PUNTUACIÓN MÁXIMA.
+
+        text.clear()
+        text.write(f'Puntuación: {score}          Puntuación Máxima: {high_score}', align="center", font=("Impact", 24))
         
     totalSegments = len(body_segments)
     # print(totalSegments) ESTO ES SÓLO UN EJEMPLO SENCILLO DE CÓMO SE INCREMENTA LA PUNTUACIÓN AL CRECER SU CUERPO.
