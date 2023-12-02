@@ -185,6 +185,28 @@ while True:
         y = head.ycor()
         body_segments[0].goto(x, y)
 
+    # COLISIONES CON SU CUERPO.
+
+    for segment in body_segments:
+        if segment.distance(head) < 20: # SI LA DISTANCIA DE SU CUERPO ES MENOR QUE 20.
+            time.sleep(1) # EN 1 SEGUNDO DUERME EN ESTA ACCIÓN.
+            head.goto(0, 0) # SI SE COLISIONA INICIALMENTE CON SU CUERPO EN ESA POSICIÓN.
+            head.direction = "Stop"
+
+        # ESCONDER LOS SEGMENTOS DE LA SERPIENTE:
+
+            # MEDIANTE UN CICLO "for":
+
+            for segmento in body_segments: # POR CADA SEGMENTO DE LA SERPIENTE.
+                segmento.goto(1000, 1000) # SON 1000 SEGMENTOS DE ANCHO Y LOS OTROS 1000 DE ALTURA.
+                
+            body_segments.clear() # LIMPIA EL CUERPO DE LA SERPIENTE.
+
+            score = 0
+            text.clear()
+            text.write(f'Puntuación: {score}          Puntuación Máxima: {high_score}', align="center", font=("Impact", 24))
+
+
 
     mov() # LLAMA AL MÉTODO DE MOVER SU CABEZA.
     time.sleep(delay) # DUERME EL PROGRAMA DURANTE 0.1 FRAMES POR SEGUNDO.
