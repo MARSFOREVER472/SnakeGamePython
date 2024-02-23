@@ -4,7 +4,7 @@
 - _En esta oportunidad les traigo mi propia versión del tutorial sobre cómo desarrollar el juego de snake._
 - _En tan solo 50 minutos verás que con conocimientos básicos se pueden hacer cosas muy precisas hoy en día._
 
-- Link del proyecto aquí: https://www.youtube.com/watch?v=lKzEvbGbbPo&t=1396s
+- **Link del proyecto aquí:** https://www.youtube.com/watch?v=lKzEvbGbbPo&t=1396s
 
 Kind regards!
 
