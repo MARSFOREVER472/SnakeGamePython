@@ -1,7 +1,7 @@
 # SnakeGamePython
 
 - _Lo divertido de Python es que su ecosistema te permite desarrollar cosas divertidas usando solo conceptos básicos de programación._
-- En esta oportunidad les traigo mi propia versión del tutorial sobre cómo desarrollar el juego de snake. 
+- _En esta oportunidad les traigo mi propia versión del tutorial sobre cómo desarrollar el juego de snake._
 - En tan solo 50 minutos verás que con conocimientos básicos se pueden hacer cosas muy precisas hoy en día.
 
 - Link del proyecto aquí: https://www.youtube.com/watch?v=lKzEvbGbbPo&t=1396s
